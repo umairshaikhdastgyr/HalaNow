@@ -33,9 +33,8 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            maven(MavenPublication) {
+            release(MavenPublication) {
                 from components.release
-
                 groupId = 'com.testlib.mylibrary'
                 artifactId = 'mylibrary'
                 version = '1.0.5'
