@@ -36,12 +36,17 @@ publishing {
             groupId = 'com.testlib.mylibrary'
             artifactId = 'mylibrary'
             version = '1.0.0'
-            from components.android
+            afterEvaluate {
+                from components.release
+            }
         }
     }
 
     repositories {
-        url = uri('https://maven.pkg.github.com/testlib/mylibrary')
+        maven {
+            name = 'GitHubPackages'
+            url = uri('https://maven.pkg.github.com/umairshaikhdastgyr/HalaNow')
+        }
     }
 
 }
