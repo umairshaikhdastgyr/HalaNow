@@ -37,7 +37,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.testlib.mylibrary'
                 artifactId = 'mylibrary'
-                version = '1.0.5'
+                version = '1.0.6'
             }
         }
     }
