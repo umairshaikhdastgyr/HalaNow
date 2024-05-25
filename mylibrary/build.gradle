@@ -30,20 +30,19 @@ android {
     }
 }
 
-
+afterEvaluate {
     publishing {
         publications {
             maven(MavenPublication) {
+                from components.release
+
                 groupId = 'com.testlib.mylibrary'
                 artifactId = 'mylibrary'
-                version = '1.0.4'
-
-                artifact("$buildDir/outputs/aar/mylibrary-release.aar")
-
+                version = '1.0.5'
             }
         }
     }
-
+}
 
 dependencies {
 
