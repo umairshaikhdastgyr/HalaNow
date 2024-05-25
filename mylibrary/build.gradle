@@ -36,7 +36,7 @@ android {
             maven(MavenPublication) {
                 groupId = 'com.testlib.mylibrary'
                 artifactId = 'mylibrary'
-                version = '1.0.0'
+                version = '1.0.4'
 
                 artifact("$buildDir/outputs/aar/mylibrary-release.aar")
 
