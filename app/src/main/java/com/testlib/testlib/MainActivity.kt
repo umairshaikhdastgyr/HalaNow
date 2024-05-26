@@ -14,8 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.content.ContextCompat.startActivity
-import com.testlib.mylibrary.FormActivity
+//import com.testlib.mylibrary.FormActivity
 import com.testlib.testlib.ui.theme.TestLibTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,7 +43,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier.clickable {
 
-            context.startActivity(Intent(context, FormActivity::class.java))
+//            context.startActivity(Intent(context, FormActivity::class.java))
 
         }
     )
