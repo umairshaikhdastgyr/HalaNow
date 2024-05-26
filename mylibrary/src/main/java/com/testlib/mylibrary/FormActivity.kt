@@ -61,7 +61,7 @@ class FormActivity : ComponentActivity() {
             )
 
             Text(
-                text = "Enter Amount",
+                text = "Enter Amount Please",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.fillMaxWidth(),
