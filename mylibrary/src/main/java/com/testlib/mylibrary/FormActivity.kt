@@ -1,4 +1,4 @@
-package com.testlib.testlib
+package com.testlib.mylibrary
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,13 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.testlib.testlib.ui.theme.TestLibTheme
+import com.testlib.mylibrary.ui.theme.TestLibTheme
 
-class MainActivity : ComponentActivity() {
+class FormActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContent {
             TestLibTheme {
                 // A surface container using the 'background' color from the theme
@@ -24,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting2("Form Activity")
                 }
             }
         }
@@ -32,7 +30,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting2(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -41,8 +39,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     TestLibTheme {
-        Greeting("Android")
+        Greeting2("Android")
     }
 }

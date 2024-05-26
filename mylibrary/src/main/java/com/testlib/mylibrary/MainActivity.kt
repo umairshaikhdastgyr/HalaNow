@@ -1,4 +1,4 @@
-package com.testlib.testlib
+package com.testlib.mylibrary
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,13 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.testlib.testlib.ui.theme.TestLibTheme
+import com.testlib.mylibrary.ui.theme.TestLibTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContent {
             TestLibTheme {
                 // A surface container using the 'background' color from the theme
