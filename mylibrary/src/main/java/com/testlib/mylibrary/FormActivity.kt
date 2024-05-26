@@ -22,7 +22,7 @@ class FormActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting2("Form Activity")
+                    Greeting2("Form Activity Mujtaba")
                 }
             }
         }
