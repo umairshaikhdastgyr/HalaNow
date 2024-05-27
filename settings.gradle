@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TestLib"
+rootProject.name = "HalaNow"
 include ':app'
-include ':mylibrary'
+include ':hala_now_library'
