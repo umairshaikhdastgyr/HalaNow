@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.inputfields
+package sa.halalah.hala_now_library.core_widgets.inputfields
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -31,8 +31,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.hala.module_core.R
-import com.hala.module_core.style.MyTypography
+import sa.halalah.hala_now_library.R
+import sa.halalah.hala_now_library.theme.MyTypography
 
 @Composable
 fun AmountTextField(

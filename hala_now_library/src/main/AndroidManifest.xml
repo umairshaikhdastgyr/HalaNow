@@ -7,7 +7,7 @@
         android:name=".HalaNowApplication"
         >
         <activity
-            android:name=".MainActivity"
+            android:name=".pay_later.ui.PaymentsFormActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.HalaNow" />

@@ -42,9 +42,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.hala.module_core.compose.inputfields.InputField
-import com.hala.module_core.compose.inputfields.MobileInputField
-import com.hala.module_core.compose.inputfields.SuffixTransformation
+import sa.halalah.hala_now_library.core_widgets.inputfields.InputField
+import sa.halalah.hala_now_library.core_widgets.inputfields.MobileInputField
+import sa.halalah.hala_now_library.core_widgets.inputfields.SuffixTransformation
 import sa.halalah.hala_now_library.R
 import sa.halalah.hala_now_library.core_widgets.HalaButton
 import sa.halalah.hala_now_library.core_widgets.loadingModal
@@ -52,7 +52,6 @@ import sa.halalah.hala_now_library.pay_later.models.DynamicInputFieldInputType
 import sa.halalah.hala_now_library.pay_later.models.SupplierInputField
 import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
 import sa.halalah.hala_now_library.theme.MyTypography
-import sa.halalah.hala_now_library.utils.UIUtil
 import sa.halalah.hala_now_library.utils.amountToString
 
 

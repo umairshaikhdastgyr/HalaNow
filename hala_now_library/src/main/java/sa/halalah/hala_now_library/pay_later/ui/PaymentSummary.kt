@@ -1,8 +1,6 @@
 package sa.halalah.hala_now_library.pay_later.ui
 
 import Border
-import android.app.Activity
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -32,20 +30,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
-import com.hala.module_core.compose.inputfields.KeyValueText
+import sa.halalah.hala_now_library.core_widgets.inputfields.KeyValueText
 import kotlinx.serialization.cbor.Cbor
 import kotlinx.serialization.decodeFromHexString
 import sa.halalah.hala_now_library.R
 import sa.halalah.hala_now_library.core_widgets.HalaButton
-import sa.halalah.hala_now_library.core_widgets.InformationModal
 import sa.halalah.hala_now_library.core_widgets.TitleBar
-import sa.halalah.hala_now_library.core_widgets.loadingModal
 import sa.halalah.hala_now_library.pay_later.models.ConfirmPaylaterRequest
-import sa.halalah.hala_now_library.pay_later.models.ConfirmationPayLaterViewState
 import sa.halalah.hala_now_library.pay_later.models.CreatePaylaterOrderResponse
 import sa.halalah.hala_now_library.pay_later.models.ImageAndNotes
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderDetails

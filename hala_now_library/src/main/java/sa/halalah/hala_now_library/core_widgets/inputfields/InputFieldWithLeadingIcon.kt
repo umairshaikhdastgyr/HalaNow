@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.inputfields
+package sa.halalah.hala_now_library.core_widgets.inputfields
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -23,7 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.hala.module_core.R
+import sa.halalah.hala_now_library.R
 
 @Composable
 fun InputFieldWithLeadingIcon(

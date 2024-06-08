@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.inputfields
+package sa.halalah.hala_now_library.core_widgets.inputfields
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -18,8 +18,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.hala.module_core.R
-import com.hala.module_core.style.MyTypography
+import sa.halalah.hala_now_library.R
+import sa.halalah.hala_now_library.theme.MyTypography
 
 @Composable
 fun DisabledInputField(

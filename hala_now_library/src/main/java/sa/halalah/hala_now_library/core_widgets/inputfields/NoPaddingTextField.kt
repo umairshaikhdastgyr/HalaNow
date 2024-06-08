@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.inputfields
+package sa.halalah.hala_now_library.core_widgets.inputfields
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -16,8 +16,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.SolidColor
@@ -27,8 +25,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.hala.module_core.R
-import com.hala.module_core.style.MyTypography
+import sa.halalah.hala_now_library.R
+import sa.halalah.hala_now_library.theme.MyTypography
 
 @Composable
 fun NoPaddingTextField(
