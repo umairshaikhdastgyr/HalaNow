@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_100">#009877</color>
+    <color name="primary_90">#27AD8F</color>
+    <color name="primary_80">#4DC1A8</color>
+    <color name="primary_70">#74D6C0</color>
+    <color name="primary_60">#87E0CC</color>
+    <color name="primary_50">#AEF5E5</color>
+    <color name="primary_40">#C1FFF1</color>
+    <color name="primary_30">#E4FFF9</color>
+
+    <color name="secondary_100">#FFD100</color>
+    <color name="secondary_90">#FFDA33</color>
+    <color name="secondary_80">#FFE366</color>
+    <color name="secondary_70">#FFED99</color>
+    <color name="secondary_60">#FFF1B2</color>
+    <color name="secondary_50">#FFF6CC</color>
+    <color name="secondary_40">#FFFAE5</color>
+    <color name="secondary_30">#FEFBED</color>
+
+    <color name="surface">#E7EDF3</color>
+    <color name="surface_1">#FFFFFF</color>
+    <color name="surface_3">#F5F8FB</color>
+
+
+    <color name="natural_color_300">#8697A7</color>
+    <color name="natural_color_200">#A4B4C3</color>
+    <color name="natural_color_60">#EDF1F6</color>
+
+
+    <color name="hala_finance_purple">#8A24E6</color>
+    <color name="hala_finance_light_purple">#E0CEF7</color>
+
+    <color name="error_100">#FC2B3A</color>
+    <color name="error_90">#FC2B4A</color>
+    <color name="error_80">#FF4964</color>
+    <color name="error_70">#FF7488</color>
+    <color name="error_60">#FBE9E9</color>
+    <color name="error_50">#FFF6F6</color>
+
+
+    <color name="alternative_100">#F86E22</color>
+    <color name="alternative_90">#FF823E</color>
+    <color name="alternative_80">#FF9B64</color>
+    <color name="alternative_70">#F7D9C7</color>
+    <color name="alternative_60">#FAE6D9</color>
+    <color name="alternative_50">#FCF2EC</color>
+
+    <color name="neutrals_10">#FFFFFF</color>
+    <color name="neutrals_50">#F7F9FC</color>
+    <color name="neutrals_80">#DBE4EC</color>
+    <color name="neutrals_300">#8697A7</color>
+    <color name="neutrals_400">#67798A</color>
+    <color name="neutrals_800">#000000</color>
+    <color name="neutrals_500">#586A7C</color>
+
+    <color name="text_1">#000000</color>
+    <color name="text_2">#394D5F</color>
+    <color name="text_3">#67798A</color>
+    <color name="text_4">#8697A7</color>
+    <color name="text_5">#A4B4C3</color>
+    <color name="text_6">#CFDBE6</color>
+    <color name="text_7">#FFFFFF</color>
+    <color name="text_8">#FC2B3A</color>
+    <color name="text_9">#01B544</color>
+    <color name="text_10">#009877</color>
+    <color name="text_11">#FFD100</color>
+    <color name="text_12">#FEBC1F</color>
+
+    <color name="on_overlay_9">#F5F8FB</color>
+
+    <color name="button_1">#009877</color>
+    <color name="button_7">#CFDBE6</color>
+    <color name="button_6">#E6FCF7</color>
+
+
+    <color name="stroke_1">#CFDBE6</color>
+    <color name="stroke_2">#009877</color>
+    <color name="stroke_9">#E7EDF3</color>
+    <color name="background_1">#FFFFFF</color>
+    <color name="background_2">#F7F9FC</color>
+
+    <color name="icon_9">#FEBC1F</color>
+    <color name="icon_6">#FC2B3A</color>
+    <color name="icon_5">#01B544</color>
+
+
+
+    <color name="overlay_2">#F5F8FB</color>
+    <color name="overlay_3">#F1F5F9</color>
+    <color name="overlay_4">#F9FAFC</color>
+    <color name="overlay_5">#FFFFFF</color>
+    <color name="overlay_13">#FFFFFF</color>
+
+    <color name="icon_2">#394D5F</color>
+    <color name="icon_3">#67798A</color>
+    <color name="status_refunded">#67BCED</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+</resources>

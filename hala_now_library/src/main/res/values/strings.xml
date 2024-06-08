@@ -1,0 +1,249 @@
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Suppliers -->
+    <string name="suppliers_select_payment_method">Select payment method</string>
+    <string name="suppliers_transfer_now">Transfer Now</string>
+    <string name="suppliers_transfer_now_sub">Transfer now to your EVD wallet</string>
+    <string name="suppliers_auto_recharge">Set auto recharge amount</string>
+    <string name="suppliers_auto_recharge_sub">Auto Recharge your EVD wallet</string>
+    <string name="suppliers_auto_recharge_cancel">Cancel auto recharge</string>
+    <string name="suppliers_auto_recharge_cancel_sub">Cancel auto Recharge your EVD wallet</string>
+    <string name="suppliers_enter_amount">Enter Amount</string>
+    <string name="suppliers_screen_title">Suppliers</string>
+    <string name="suppliers_orders_screen_title">Pay later orders</string>
+    <string name="suppliers_auto_recharge_screen_title">Auto Recharge</string>
+    <string name="supplier_auto_recharge_explanation">Please enter the recharge amount for transfer to your wallet when the balance drops below 100 SAR</string>
+    <string name="payment_summary_title">Summary</string>
+    <string name="suppliers_payment_details">Details</string>
+    <string name="suppliers_payment_amount_label">Recharge Amount</string>
+    <string name="suppliers_supplier_details">Supplier Details</string>
+    <string name="suppliers_supplier_name_label">Supplier Name</string>
+    <string name="suppliers_recharge_success_message">Auto - recharge amount has been set successfully</string>
+    <string name="suppliers_go_to_dashboard">Go to dashboard</string>
+    <string name="title_activity_auto_recharge">AutoRechargeActivity</string>
+    <string name="supplier_auto_recharge_set_now">Set Now</string>
+    <string name="status">Status</string>
+    <string name="completed">Completed</string>
+    <string name="entry_shouldbe_at_least">Entry should be at least</string>
+    <string name="enter">Enter</string>
+    <string name="in_length">in length</string>
+    <string name="check_internet_connection">Connection interrupted, check your network please. Try Again</string>
+
+    <string name="suppliers_view_more">View More</string>
+    <string name="suppliers_title">Suppliers</string>
+    <string name="suppliers_orders_title">Orders</string>
+    <string name="suppliers_pay_later_orders_title">Pay later orders</string>
+    <string name="suppliers_order_paid_on">Paid on</string>
+    <string name="suppliers_order_created_on">Created on</string>
+    <string name="suppliers_tab_paid">Paid</string>
+    <string name="suppliers_tab_pending">Pending</string>
+    <string name="pay_later">Pay Later</string>
+    <string name="send_reminder">Send Reminder</string>
+    <string name="available_limit">"Available Limit: "</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_are_eligible_for_pay_later">You are eligible for Pay Later</string>
+    <string name="we_have_forwarded">We have forwarded your interest to the Manager %1$s.  Please reach out for approval</string>
+    <string name="awaiting_approval">Awaiting approval</string>
+    <string name="something_went_wrong">Something went wrong. Please try again!</string>
+    <string name="how_to_use_pay_later">How to use Pay later?</string>
+    <string name="payments">Payments</string>
+    <string name="pay_using_your_approved_limit">Pay using your approved limit</string>
+    <string name="payment_successful">Payment Successful!</string>
+    <string name="pending_requests">Pending Requests</string>
+    <string name="available_pay_later_balance">Available Pay Later Balance</string>
+    <string name="add_invoice_optional">Add Invoice (optional)</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="enter_your_notes">Enter your notes</string>
+    <string name="please_enter_valid_amount">Please enter valid amount</string>
+    <string name="please_fill_all_mandatory_fields">Please fill out all required fields.</string>
+    <string name="continuee">Continue</string>
+    <string name="what_is_pay_later">What Is Pay Later?</string>
+    <string name="pay_later_allows">Pay Later allows you to split your invoice into interest-free installments. You only pay as per the schedule and comfort.</string>
+    <string name="no_hidden_fee">No Hidden Fee</string>
+    <string name="shariah_compliant">Shariah compliant</string>
+    <string name="easy_installments">Easy Installments</string>
+    <string name="your_application">Your application for the Hala pay later is currently under review by your manager. Please contact them directly to check on the status.</string>
+    <string name="request_under_review">Request Under Review</string>
+    <string name="we_have_sent_a_reminder">We have sent a reminder to the Manager %1$s.  Please reach out for approval</string>
+    <string name="upcoming_payments">Upcoming Payments</string>
+    <string name="paid_payments">Paid Payments</string>
+    <string name="date">Date</string>
+    <string name="you_still_have">You still have...</string>
+    <string name="supplier_available_balance">Available Balance: </string>
+    <string name="utilized_amount">Utilized Amount</string>
+    <string name="pay_in_easy_installments">Pay in %1$s easy installments</string>
+    <string name="supplier_apply_now">Apply Now</string>
+    <string name="pay_later_comma">\"Pay Later\"</string>
+    <string name="when_paying_supplier_select">"When paying supplier, select "</string>
+    <string name="then_we_ll_deduct_automatic_re_payments_from_your">Then, we will deduct automatic re-payments from your</string>
+    <string name="wallet_as_per_the_schedule">" wallet as per the schedule"</string>
+    <string name="total_payable_amount">Total Payable Amount</string>
+    <string name="payment_date">Payment Date:</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="paid">Paid</string>
+    <string name="installment">Installment %1$s</string>
+    <string name="remaining_amount">Remaining Amount</string>
+    <string name="settled_amount">Settled Amount</string>
+    <string name="payment_schedule">Payment Schedule %1$s/%2$s</string>
+    <string name="_1st_payment">1st Payment</string>
+    <string name="last_payment">Last payment</string>
+    <string name="installments">Installments</string>
+    <string name="due_on">Due on</string>
+    <string name="no_orders_found">No orders found</string>
+    <string name="order_details">Order Details</string>
+    <string name="transfer_now_to_your_supplier">Transfer now to your supplier</string>
+
+    <!-- Form Screen -->
+
+    <string name="payment_details">Payment Details</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="numbers_of_installment">Numbers of Installment</string>
+    <string name="loan_start_date">Loan Start Date</string>
+    <string name="loan_end_date">Loan End Date</string>
+    <string name="attachment">Attachment</string>
+    <string name="notes">Notes</string>
+    <string name="supplier_name">Supplier Name</string>
+    <string name="agent_phone">Agent Phone</string>
+    <string name="supplier_details">Supplier Details</string>
+    <string name="amount_should_be_less_than">Amount should be less than available balance %1$s SAR</string>
+    <string name="no_interest_no_fee">No interest, No fee</string>
+    <string name="reminder_sent">Reminder sent!</string>
+
+    <!-- Cancel Auto Recharge -->
+    <string name="cancel_sheet_title">Are you sure you want to cancel your auto recharge?</string>
+    <string name="cancel_error">There is no auto recharge to be canceled.</string>
+    <string name="cancel_success">Auto recharge canceled successfully.</string>
+    <string name="no">No</string>
+
+    <!-- Suspended View-->
+    <string name="your_pay_later_has_been_suspended">Your pay later has been suspended.</string>
+    <string name="to_know_more_please_contact_us">To know more please contact us</string>
+
+    <!-- BNPL Banner-->
+    <string name="with_your_10_000_sar">With your xxxx SAR credit limit, you don’t have to worry about paying suppliers on delivery. We take care of it.</string>
+    <string name="sell_first_pay_later">Sell First, Pay Later!</string>
+    <string name="with_your">"With your "</string>
+    <string name="approval_you_don_t_have_to_worry_about_payment_on_delivery_we_take_care_of_it">" approval, you don't have to worry about payment on delivery. We take care of it."</string>
+    <string name="pay_later_activated">Pay Later activated!</string>
+    <string name="congratulations_you_can_now">Congratulations, You can now use \"Pay Later\"</string>
+    <string name="apply_now_bnpl">. Apply now</string>
+    <string name="you_are_approved_for">You are approved for</string>
+
+    <!-- Payment description-->
+    <string name="overdue_payments_text">*Overdue payments are unpaid installments from previous days</string>
+    <string name="partially_paid_text">*Partially paid payments are incomplete installments  from previous days</string>
+    <string name="partially_paid">Partially Paid</string>
+    <string name="overdue">Overdue</string>
+    <string name="please_enter_a_valid_amount">Please enter a valid amount.</string>
+    <string name="success">Success!</string>
+    <string name="you_have_been_approved_for_pay_later">You have been approved for Pay later</string>
+    <string name="amount_should_be_more_than">Amount should be more than 0 SAR and less than available balance %1$s SAR</string>
+
+    <string name="app_name">Module-Core</string>
+
+    <string name="lang">en</string>
+
+    <string name="logout">Logout</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure">Sure</string>
+
+    <declare-styleable name="SwipeRevealLayout">
+        <attr name="dragFromEdge">
+            <flag name="left" value="2" />
+            <flag name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <string name="resend_code">Resend Code</string>
+    <string name="wrong_pin">Wrong pin code!</string>
+    <string name="wrong_number">Please enter a valid number</string>
+    <string name="we_sent_you">We sent a code to your mobile number</string>
+    <string name="purchase_confirmation">Purchase Confirmation</string>
+    <string name="resend_code_in">Resend Code in</string>
+
+    <string name="form_field_invalid_error">Invalid %s</string>
+    <string name="one_time_payment">One Time \nPayment</string>
+    <string name="failed_transaction_dialog_title">Failed to pay bellow bills</string>
+    <string name="done">Done</string>
+    <string name="storage_permission">Enable storage access to enable this feature!</string>
+    <string name="transaction_details_remaining_balance">Remaining balance</string>
+    <string name="thank_you">Thank You</string>
+    <string name="success_transaction">Successful Transaction!</string>
+    <string name="amount">Amount</string>
+    <string name="date_and_time">Date and Time</string>
+    <string name="fees">Fees</string>
+    <string name="vat">VAT</string>
+    <string name="total">Total</string>
+    <string name="total2">Total Amount</string>
+    <string name="transaction_number">Transaction Number</string>
+    <string name="share">Share</string>
+    <string name="currency">SAR</string>
+    <string name="change_your_pin">Change Your Pin Code</string>
+    <string name="enter_your_pin">Enter Your Pin Code</string>
+    <string name="use_finger">Use Fingerprint To Authenticate</string>
+    <string name="place_your_finger">Place your finger on scanner</string>
+    <string name="failed_try_again">Failed! try again</string>
+    <string name="no_fingerprint">Your device does\'nt support fingerprint authentication</string>
+    <string name="enable_fingerprint">Enable the fingerprint permission</string>
+    <string name="register_fingerprint">Your Device has no registered Fingerprints! Register at least one in your Device settings</string>
+    <string name="enable_lockscreen">Please enable lock screen security in your device Settings</string>
+    <string name="attempts">Attempts </string>
+    <string name="out_of">out of</string>
+    <string name="logout_underline"><u>Logout</u></string>
+    <string name="please_enter_pin_code_to_continue">Enter your PIN code to continue</string>
+    <string name="logout_device_management">Logout</string>
+    <string name="logout_dialog_title">Logout Confirmation</string>
+    <string name="logout_dialog_message">Are you sure you want to logout from your account in Hala?</string>
+
+    <string name="welcome_back">Welcome back,</string>
+
+
+    <string name="does_not_support_fingerprint">Your device does not support fingerprint authentication !</string>
+    <string name="no_fingerprint_configured">No fingerprint configured. Please register at least one fingerprint in your device\'s Settings !</string>
+
+    <string name="use_fingerprint_title">Use Fingerprint Confirmation</string>
+    <string name="use_fingerprint_message">Are you sure you want to use fingerprint for authentication?</string>
+    <string name="yes">Yes</string>
+
+    <string name="error">Error</string>
+
+    <string name="amount_field_enter_amount">Enter Amount</string>
+
+    <!-- Select Language Screen -->
+    <string name="select_language">Select Language</string>
+    <string name="save_language">Yes, i\'m sure</string>
+    <string name="language_dialog_title">Are you sure you want to change the language?</string>
+    <string name="language_dialog_message">Changing the language will restart the app</string>
+
+    <!--Terms Screen -->
+    <string name="i_agree">I agree to the </string>
+    <string name="terms_conditions">terms &amp; conditions</string>
+    <string name="next">Next</string>
+
+    <!-- Date Picker -->
+    <string name="date_picker_clear">Clear</string>
+    <string name="date_picker_apply">Apply</string>
+
+    <string name="failed_try_again_later">Failed! try again later</string>
+
+    <!-- Mobile Input Field -->
+    <string name="mobile_number_prefix" translatable="false">+966</string>
+    <string name="mobile_number_placeholder" translatable="false">500000000</string>
+
+    <string name="content_description_hala">Hala logo</string>
+
+    <string name="core_date_of_birth">Date of birth*</string>
+    <string name="core_date_format">DD/MM/YYYY</string>
+
+    <string name="core_national_id">National ID*</string>
+    <string name="core_enter_your_national_id">Enter your national ID</string>
+    <string name="content_description_back_button">Back button</string>
+
+    <!-- Choose Options -->
+    <string name="take_a_photo_option">Take a photo</string>
+    <string name="upload_a_photo_option">Upload from photos</string>
+    <string name="choose_a_file_option">Choose a file</string>
+</resources>
