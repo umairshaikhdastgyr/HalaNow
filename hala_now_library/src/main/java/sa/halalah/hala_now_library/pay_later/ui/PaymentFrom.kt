@@ -41,6 +41,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import sa.halalah.hala_now_library.core_widgets.inputfields.InputField
 import sa.halalah.hala_now_library.core_widgets.inputfields.MobileInputField
@@ -51,6 +52,7 @@ import sa.halalah.hala_now_library.core_widgets.loadingModal
 import sa.halalah.hala_now_library.pay_later.models.DynamicInputFieldInputType
 import sa.halalah.hala_now_library.pay_later.models.SupplierInputField
 import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
+import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.theme.MyTypography
 import sa.halalah.hala_now_library.utils.amountToString
 
@@ -60,6 +62,7 @@ fun PaymentsForm(
     navController: NavHostController,
 //    paymentFormViewModel: PaymentFormViewModel = getViewModel()
 ) {
+    val categoryViewModel: FormViewModel = hiltViewModel()
     // Accessing the current context and activity
     val context = LocalContext.current
     val activity = context as PaymentsFormActivity

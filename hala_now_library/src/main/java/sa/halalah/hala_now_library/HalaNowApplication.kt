@@ -4,4 +4,4 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 
-class HalaNowApplication: Application() {}
+class HalaNowApplication{}

@@ -14,7 +14,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PaymentsFormActivity : ComponentActivity() {
 
     private var mainController: NavHostController? = null
