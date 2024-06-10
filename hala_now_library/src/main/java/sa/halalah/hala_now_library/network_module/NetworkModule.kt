@@ -1,9 +1,9 @@
 package sa.halalah.hala_now_library.network_module
 
 import android.content.Context
-import com.chuckerteam.chucker.api.ChuckerCollector
-import com.chuckerteam.chucker.api.ChuckerInterceptor
-import com.chuckerteam.chucker.api.RetentionManager
+//import com.chuckerteam.chucker.api.ChuckerCollector
+//import com.chuckerteam.chucker.api.ChuckerInterceptor
+//import com.chuckerteam.chucker.api.RetentionManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,12 +41,12 @@ class NetworkModule {
                     return@Interceptor chain.proceed(builder.build())
                 }
             )
-                addInterceptor(
-                    Interceptor { chain ->
-                        return@Interceptor  ChuckerInterceptor(appContext)
-                            .intercept(chain)
-                    }
-                )
+//                addInterceptor(
+//                    Interceptor { chain ->
+//                        return@Interceptor  ChuckerInterceptor(appContext)
+//                            .intercept(chain)
+//                    }
+//                )
         }.build()
     }
 
