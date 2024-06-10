@@ -44,8 +44,8 @@ fun MobileInputField(
                             containerColor = colorResource(id = R.color.overlay_3)
                     ),
                     modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp),
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
             ) {
                 Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -57,7 +57,7 @@ fun MobileInputField(
                             contentDescription = ""
                     )
                     Text(
-                            text = stringResource(id = R.string.mobile_number_prefix),
+                            text = stringResource(R.string.mobile_number_prefix),
                             style = MyTypography.button,
                             color = colorResource(id = R.color.text_2),
                             modifier = Modifier.padding(start = 8.dp, end = 4.dp)
@@ -67,7 +67,7 @@ fun MobileInputField(
                             onValueChange = {
                                 validateMobileNumber(it)
                             },
-                            placeholderText = placeholder.ifEmpty { stringResource(id = R.string.mobile_number_placeholder) },
+                            placeholderText = placeholder.ifEmpty { stringResource(R.string.mobile_number_placeholder) },
                             keyboardOptions = KeyboardOptions(
                                     keyboardType = KeyboardType.Number
                             ),
@@ -79,8 +79,8 @@ fun MobileInputField(
         if (errorText.isNotEmpty()) {
         Row(
                 modifier = Modifier
-                        .padding(top = 8.dp)
-                        .height(18.dp),
+                    .padding(top = 8.dp)
+                    .height(18.dp),
                 verticalAlignment = Alignment.CenterVertically
         ) {
 

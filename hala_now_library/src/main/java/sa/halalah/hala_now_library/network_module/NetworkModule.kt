@@ -13,6 +13,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import sa.halalah.hala_now_library.core_models.UserDataHolder
 import sa.halalah.hala_now_library.pay_later.repository.PayLaterAPIs
 import javax.inject.Singleton
 
@@ -29,9 +30,14 @@ class NetworkModule {
             addInterceptor(
                 Interceptor { chain ->
                     val builder = chain.request().newBuilder()
-                    builder.header("X-App-Version", "1.23")
-                    builder.header("X-Platform", "Android")
-                    builder.header("X-Auth-Token", "sgsrager32524542afg3423")
+                    builder.header("Authorization", UserDataHolder.getUserData().token)
+                    builder.header("Content-Type", "application/json")
+                    builder.header("package", "sa.halalah.business")
+                    builder.header("Ip-Address", "103.86.53.11")
+                    builder.header("AndroidBuildNumber", "200344")
+                    builder.header("AndroidAppVersion", "7.0.13-staging")
+                    builder.header("User-Agent", "Hala Business/7.0.13-staging OnePlus LE2125/ddd3f86eabd4d3a3 Android 14")
+                    builder.header("Accept-Language", "en")
                     return@Interceptor chain.proceed(builder.build())
                 }
             )

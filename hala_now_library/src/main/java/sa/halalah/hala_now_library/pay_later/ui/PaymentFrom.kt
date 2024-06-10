@@ -43,17 +43,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.hala.module_core.compose.attachments.AddAttachments
+import com.hala.module_core.compose.attachments.MIMEType
 import sa.halalah.hala_now_library.core_widgets.inputfields.InputField
 import sa.halalah.hala_now_library.core_widgets.inputfields.MobileInputField
 import sa.halalah.hala_now_library.core_widgets.inputfields.SuffixTransformation
 import sa.halalah.hala_now_library.R
 import sa.halalah.hala_now_library.core_widgets.HalaButton
+import sa.halalah.hala_now_library.core_widgets.inputfields.NoBackgroundTextField
 import sa.halalah.hala_now_library.core_widgets.loadingModal
 import sa.halalah.hala_now_library.pay_later.models.DynamicInputFieldInputType
 import sa.halalah.hala_now_library.pay_later.models.SupplierInputField
 import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
 import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.theme.MyTypography
+import sa.halalah.hala_now_library.utils.UIUtil
 import sa.halalah.hala_now_library.utils.amountToString
 
 
@@ -287,9 +291,9 @@ fun PaymentsForm(
                     .padding(3.dp, 3.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-//                NoBackgroundTextField(stringResource(R.string.enter_your_notes), notes) {
-//                    notes = it
-//                }
+                NoBackgroundTextField(stringResource(R.string.enter_your_notes), notes) {
+                    notes = it
+                }
             }
 
         }

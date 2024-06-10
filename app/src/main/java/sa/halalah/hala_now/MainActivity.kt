@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import sa.halalah.hala_now.ui.theme.HalaNowTheme
+import sa.halalah.hala_now_library.core_models.UserData
+import sa.halalah.hala_now_library.core_models.UserDataHolder
 import sa.halalah.hala_now_library.pay_later.ui.PaymentsFormActivity
 
 class MainActivity : ComponentActivity() {
@@ -26,6 +28,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
+                    val user  = UserData("Ahmed", 1, "1", "1", "1234567890", "1234", "1234567890", 100f, 1, true, false, false, false)
+                    UserDataHolder.setUserData(user)
                 }
             }
         }
