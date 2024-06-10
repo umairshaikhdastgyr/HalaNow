@@ -17,7 +17,7 @@ import androidx.navigation.navArgument
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PaymentsFormActivity : ComponentActivity() {
+class PayLaterActivity : ComponentActivity() {
 
     private var mainController: NavHostController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +75,7 @@ class PaymentsFormActivity : ComponentActivity() {
     companion object {
         @JvmStatic
         fun getIntent(context: Context) =
-            Intent(context, PaymentsFormActivity::class.java)
+            Intent(context, PayLaterActivity::class.java)
 
         @JvmStatic
         fun start(context: Context) {
