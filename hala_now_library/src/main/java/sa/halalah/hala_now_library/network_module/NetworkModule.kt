@@ -1,8 +1,6 @@
 package sa.halalah.hala_now_library.network_module
 
-//import com.chuckerteam.chucker.api.ChuckerCollector
-//import com.chuckerteam.chucker.api.ChuckerInterceptor
-//import com.chuckerteam.chucker.api.RetentionManager
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -10,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import sa.halalah.hala_now_library.HalaNowApplication
 import sa.halalah.hala_now_library.core_models.UserDataHolder
-import sa.halalah.hala_now_library.pay_later.repository.PayLaterAPIs
+import sa.halalah.hala_now_library.authentication.repository.AuthAPIs
 
 
 object NetworkModule {
@@ -37,22 +35,19 @@ object NetworkModule {
                         return@Interceptor chain.proceed(builder.build())
                     }
                 )
-//                addInterceptor(
-//                    Interceptor { chain ->
-//                        return@Interceptor  ChuckerInterceptor(HalaNowApplication.Companion.applicationContext())
-//                            .intercept(chain)
-//                    }
-//                )
+                addInterceptor(
+                    Interceptor { chain ->
+                        return@Interceptor  ChuckerInterceptor(HalaNowApplication.Companion.applicationContext())
+                            .intercept(chain)
+                    }
+                )
             }.build()
     }
 
-    private val provideRetrofit : Retrofit = Retrofit.Builder()
+     val provideRetrofit : Retrofit = Retrofit.Builder()
         .baseUrl("https://api.example.com/")
         .client(provideOkHttpClient())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-
-    fun provideApiService(): PayLaterAPIs =  provideRetrofit.create(PayLaterAPIs::class.java)
 
 }

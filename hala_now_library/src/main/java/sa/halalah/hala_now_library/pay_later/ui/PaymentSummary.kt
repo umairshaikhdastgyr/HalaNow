@@ -1,6 +1,8 @@
 package sa.halalah.hala_now_library.pay_later.ui
 
 import Border
+import android.app.Activity
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -21,6 +23,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,6 +33,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
@@ -37,8 +42,10 @@ import sa.halalah.hala_now_library.core_widgets.inputfields.KeyValueText
 import kotlinx.serialization.cbor.Cbor
 import kotlinx.serialization.decodeFromHexString
 import sa.halalah.hala_now_library.R
+import sa.halalah.hala_now_library.authentication.ui.IntentActivity
 import sa.halalah.hala_now_library.core_models.UserDataHolder
 import sa.halalah.hala_now_library.core_widgets.HalaButton
+import sa.halalah.hala_now_library.core_widgets.InformationModal
 import sa.halalah.hala_now_library.core_widgets.TitleBar
 import sa.halalah.hala_now_library.core_widgets.loadingModal
 import sa.halalah.hala_now_library.pay_later.models.ConfirmPaylaterRequest
@@ -48,6 +55,8 @@ import sa.halalah.hala_now_library.pay_later.models.ImageAndNotes
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderDetails
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderInstallment
 import sa.halalah.hala_now_library.pay_later.models.Supplier
+import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
+import sa.halalah.hala_now_library.pay_later.view_models.PaymentSummaryViewModel
 import sa.halalah.hala_now_library.pay_later.widgets.PaymentsCoinsView
 import sa.halalah.hala_now_library.theme.MyTypography
 import sa.halalah.hala_now_library.utils.DateUtils.formatDate
@@ -57,12 +66,12 @@ import sa.halalah.hala_now_library.utils.amountToString
 @Composable
 fun PaymentSummary(
     navController: NavHostController, args: Bundle?,
-//    paymentSummaryViewModel: PaymentSummaryViewModel = getViewModel()
+    paymentSummaryViewModel: PaymentSummaryViewModel = viewModel()
 ) {
 
     val context = LocalContext.current
     val activity = context as PayLaterActivity
-//    val confirmPayLaterState by paymentSummaryViewModel.confirmPayLaterRes.collectAsState()
+    val confirmPayLaterState by paymentSummaryViewModel.confirmPayLaterRes.collectAsState()
 
 
     val payLaterOrdersResponse: CreatePaylaterOrderResponse? = if (args != null) {
@@ -83,14 +92,14 @@ fun PaymentSummary(
 
     val intentAuthLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-//            if (result.resultCode == Activity.RESULT_OK) {
-//                val errorData = (confirmPayLaterState as ConfirmationPayLaterViewState.IntentAuthRequired).response
-//                val payload =
-//                    ConfirmPaylaterRequest(orderId = payLaterOrdersResponse?.orderId ?: "",   reqId = errorData.reqId)
-////                paymentSummaryViewModel.confirmPayLater(payload)
-//            }else{
-////                paymentSummaryViewModel.resetConfirmPayLateState()
-//            }
+            if (result.resultCode == Activity.RESULT_OK) {
+                val errorData = (confirmPayLaterState as ConfirmationPayLaterViewState.IntentAuthRequired).response
+                val payload =
+                    ConfirmPaylaterRequest(orderId = payLaterOrdersResponse?.orderId ?: "",   reqId = errorData.reqId)
+                paymentSummaryViewModel.confirmPayLater(payload)
+            }else{
+                paymentSummaryViewModel.resetConfirmPayLateState()
+            }
         }
 
     val imageAndNotesArgs = args?.getString("imageAndNotes") ?: ""
@@ -135,52 +144,52 @@ fun PaymentSummary(
         Border()
 
 
-//        when (confirmPayLaterState) {
-//            is ConfirmationPayLaterViewState.Data -> {
-//                val intent = Intent("UPDATE_Suppliers_Home")
-//                LocalBroadcastManager
-//                    .getInstance(context)
-//                    .sendBroadcast(intent)
-//                InformationModal(
-//                    true,
-//                    stringResource(R.string.payment_successful),
-//                    "",
-//                    R.raw.done_animation,
-//                    onClose = {
-//                        paymentSummaryViewModel.resetConfirmPayLateState()
-//                        activity.finish()
-//                    }
-//                ) {
-//                    paymentSummaryViewModel.resetConfirmPayLateState()
-//                    activity.finish()
-//                }
-//            }
-//
-//            is ConfirmationPayLaterViewState.Error -> {
-//                InformationModal(
-//                    true,
-//                    stringResource(R.string.error),
-//                    (confirmPayLaterState as ConfirmationPayLaterViewState.Error).message,
-//                    R.raw.error_animation
-//                ) {
-//                    paymentSummaryViewModel.resetConfirmPayLateState()
-//                }
-//            }
-//
-//            is ConfirmationPayLaterViewState.IntentAuthRequired -> {
-//                val errorData = (confirmPayLaterState as ConfirmationPayLaterViewState.IntentAuthRequired).response
-//                intentAuthLauncher.launch(
-//                    IntentActivity.getIntent(context = activity, mobile = UserDataHolder.getUserData().mobileNumber, reqId = errorData.reqId)
-//                )
-//            }
-//
-//            ConfirmationPayLaterViewState.Loading -> {
-//                loadingModal(true)
-//            }
-//
-//            else -> {
-//            }
-//        }
+        when (confirmPayLaterState) {
+            is ConfirmationPayLaterViewState.Data -> {
+                val intent = Intent("UPDATE_Suppliers_Home")
+                LocalBroadcastManager
+                    .getInstance(context)
+                    .sendBroadcast(intent)
+                InformationModal(
+                    true,
+                    stringResource(R.string.payment_successful),
+                    "",
+                    R.raw.done_animation,
+                    onClose = {
+                        paymentSummaryViewModel.resetConfirmPayLateState()
+                        activity.finish()
+                    }
+                ) {
+                    paymentSummaryViewModel.resetConfirmPayLateState()
+                    activity.finish()
+                }
+            }
+
+            is ConfirmationPayLaterViewState.Error -> {
+                InformationModal(
+                    true,
+                    stringResource(R.string.error),
+                    (confirmPayLaterState as ConfirmationPayLaterViewState.Error).message,
+                    R.raw.error_animation
+                ) {
+                    paymentSummaryViewModel.resetConfirmPayLateState()
+                }
+            }
+
+            is ConfirmationPayLaterViewState.IntentAuthRequired -> {
+                val errorData = (confirmPayLaterState as ConfirmationPayLaterViewState.IntentAuthRequired).response
+                intentAuthLauncher.launch(
+                    IntentActivity.getIntent(context = activity, mobile = UserDataHolder.getUserData().mobileNumber, reqId = errorData.reqId)
+                )
+            }
+
+            ConfirmationPayLaterViewState.Loading -> {
+                loadingModal(true)
+            }
+
+            else -> {
+            }
+        }
 
 
         HalaButton(

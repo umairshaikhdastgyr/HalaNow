@@ -57,12 +57,19 @@ import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.theme.MyTypography
 import sa.halalah.hala_now_library.utils.amountToString
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hala.module_core.compose.attachments.AddAttachments
+import com.hala.module_core.compose.attachments.MIMEType
+import kotlinx.serialization.cbor.Cbor
+import kotlinx.serialization.encodeToHexString
+import sa.halalah.hala_now_library.pay_later.models.ImageAndNotes
+import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderRequest
+import sa.halalah.hala_now_library.utils.UIUtil
 
 
 @Composable
 fun PaymentsForm(
     navController: NavHostController,
-    viewModel: FormViewModel = viewModel()
+    paymentFormViewModel: FormViewModel = viewModel()
 ) {
 
     // Accessing the current context and activity
@@ -239,33 +246,33 @@ fun PaymentsForm(
                     .padding(vertical = 20.dp)
             ) {
                 val disablePicker = remember { mutableStateOf(false) }
-//                AddAttachments(
-//                    label = stringResource(id = R.string.add_invoice_optional),
-//                    isMultipleDocuments = false,
-//                    disablePickerButton = disablePicker,
-//                    attachments = if (inVoiceUri != null) listOf(inVoiceUri!!) else emptyList<Uri>(),
-//                    mimeTypes = listOf(MIMEType.IMAGE),
-//                    onAttachmentsAdded = { uriList, isFile ->
-//                        loading(true)
-//                        paymentFormViewModel.upload(uriList[0], isFile) { isUploaded, uri ->
-//                            loading(false)
-//                            if (isUploaded) {
-//                                inVoiceUri = uriList[0]
-//                                inVoiceImage = uri
-//                            } else {
-//                                UIUtil.showError(
-//                                    activity = activity,
-//                                    message = context.resources.getString(R.string.something_went_wrong)
-//                                )
-//                            }
-//                        }
-//                        disablePicker.value = true
-//                    },
-//                    onAttachmentRemoved = {
-//                        inVoiceImage = null
-//                        disablePicker.value = false
-//                    }
-//                )
+                AddAttachments(
+                    label = stringResource(id = R.string.add_invoice_optional),
+                    isMultipleDocuments = false,
+                    disablePickerButton = disablePicker,
+                    attachments = if (inVoiceUri != null) listOf(inVoiceUri!!) else emptyList<Uri>(),
+                    mimeTypes = listOf(MIMEType.IMAGE),
+                    onAttachmentsAdded = { uriList, isFile ->
+                        loading(true)
+                        paymentFormViewModel.upload(uriList[0], isFile) { isUploaded, uri ->
+                            loading(false)
+                            if (isUploaded) {
+                                inVoiceUri = uriList[0]
+                                inVoiceImage = uri
+                            } else {
+                                UIUtil.showError(
+                                    activity = activity,
+                                    message = context.resources.getString(R.string.something_went_wrong)
+                                )
+                            }
+                        }
+                        disablePicker.value = true
+                    },
+                    onAttachmentRemoved = {
+                        inVoiceImage = null
+                        disablePicker.value = false
+                    }
+                )
             }
 
 
@@ -305,52 +312,51 @@ fun PaymentsForm(
                 .padding(top = 15.dp),
             onClick = {
                 focusManager.clearFocus()
-//
-//
-//                val (isValid, id, arg) = paymentFormViewModel.validateInput(
-//                    amount,
-//                    supplierProfile,
-//                    additionalFields
-//                )
-//
-//                if (!isValid) {
-//                    UIUtil.showError(
-//                        activity = activity,
-//                        message = if(arg != "") context.getString(id, arg) else context.getString(id)
-//                    )
-//                } else {
-//                    val payLaterOrderRequest = PayLaterOrderRequest(
-//                        additionalFields = additionalFields,
-//                        amount = amount.toDouble(),
-//                        attachment = (inVoiceImage ?: Uri.EMPTY).toString(),
-//                        notes = notes,
-//                        salesmanEntityId = supplierProfile.salesmanEntityId,
-//                        supplierId = supplierProfile.id
-//                    )
-//                    loading(true)
-//                    paymentFormViewModel.submitPayLater(payLaterOrderRequest) { response ->
-//                        loading(false)
-//                        if (response == null) {
-//                            UIUtil.showError(
-//                                activity = activity,
-//                                message = context.resources.getString(R.string.something_went_wrong)
-//                            )
-//                        } else {
-//                            val responseJson = Cbor.encodeToHexString(response)
-//                            val imageAndNotes = Cbor.encodeToHexString(
-//                                ImageAndNotes(
-//                                    notes,
-//                                    inVoiceUri?.toString() ?: ""
-//                                )
-//                            )
-//                            navController.navigate(
-//                                PaymentsFormActivityScreens.PaymentSummary.route.plus(
-//                                    "/${responseJson}/${imageAndNotes}"
-//                                )
-//                            )
-//                        }
-//                    }
-//                }
+
+                val (isValid, id, arg) = paymentFormViewModel.validateInput(
+                    amount,
+                    supplierProfile,
+                    additionalFields
+                )
+
+                if (!isValid) {
+                    UIUtil.showError(
+                        activity = activity,
+                        message = if(arg != "") context.getString(id, arg) else context.getString(id)
+                    )
+                } else {
+                    val payLaterOrderRequest = PayLaterOrderRequest(
+                        additionalFields = additionalFields,
+                        amount = amount.toDouble(),
+                        attachment = (inVoiceImage ?: Uri.EMPTY).toString(),
+                        notes = notes,
+                        salesmanEntityId = supplierProfile.salesmanEntityId,
+                        supplierId = supplierProfile.id
+                    )
+                    loading(true)
+                    paymentFormViewModel.submitPayLater(payLaterOrderRequest) { response ->
+                        loading(false)
+                        if (response == null) {
+                            UIUtil.showError(
+                                activity = activity,
+                                message = context.resources.getString(R.string.something_went_wrong)
+                            )
+                        } else {
+                            val responseJson = Cbor.encodeToHexString(response)
+                            val imageAndNotes = Cbor.encodeToHexString(
+                                ImageAndNotes(
+                                    notes,
+                                    inVoiceUri?.toString() ?: ""
+                                )
+                            )
+                            navController.navigate(
+                                PaymentsFormActivityScreens.PaymentSummary.route.plus(
+                                    "/${responseJson}/${imageAndNotes}"
+                                )
+                            )
+                        }
+                    }
+                }
             },
         )
     }

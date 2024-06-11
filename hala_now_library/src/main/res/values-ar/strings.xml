@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- Suppliers -->
+    <string name="suppliers_select_payment_method">أختر طريقة الدفع</string>
+    <string name="suppliers_transfer_now">حول الان</string>
+    <string name="suppliers_transfer_now_sub">قم بالتحويل الآن إلى محفظتك الإلكترونية  (EVD)</string>
+    <string name="suppliers_auto_recharge">تعيين مبلغ الشحن التلقائي</string>
+    <string name="suppliers_auto_recharge_sub">قم بإعادة شحن محفظتك الإلكترونية</string>
+    <string name="suppliers_auto_recharge_cancel">إلغاء الشحن التلقائي</string>
+    <string name="suppliers_auto_recharge_cancel_sub">إلغاء الشحن التلقائي الخاص بك</string>
+    <string name="suppliers_enter_amount">أدخل المبلغ</string>
+    <string name="suppliers_auto_recharge_screen_title">الشحن التلقائي</string>
+    <string name="supplier_auto_recharge_explanation">الرجاء إدخال مبلغ الشحن للتحويل إلى محفظتك عندما ينخفض الرصيد إلى أقل من 100 ريال سعودي</string>
+    <string name="payment_summary_title">الملخص</string>
+    <string name="suppliers_payment_details">التفاصيل</string>
+    <string name="suppliers_payment_amount_label">مبلغ الشحن</string>
+    <string name="suppliers_supplier_details">تفاصيل المورد</string>
+    <string name="suppliers_supplier_name_label">أسم المورد</string>
+    <string name="suppliers_recharge_success_message">تم تعيين مبلغ الشحن التلقائي بنجاح</string>
+    <string name="suppliers_go_to_dashboard">الذهاب الى الى الصفحة الرئيسية</string>
+    <string name="supplier_auto_recharge_set_now">أضبط الان</string>
+    <string name="suppliers_screen_title">الموردين</string>
+    <string name="suppliers_orders_screen_title">طلبات الدفع اللاحق</string>
+    <string name="title_activity_auto_recharge">AutoRechargeActivity</string>
+
+
+    <string name="send_reminder">ارسال تذكير</string>
+    <string name="available_limit">الرصيد المتوفر: </string>
+    <string name="you_are_eligible_for_pay_later">أنت مؤهل لخاصية الدفع لاحقًا.</string>
+    <string name="we_have_forwarded">لقد قمنا بإرسال طلبك إلى المدير %1$s. يرجى التواصل للحصول على الموافقة</string>
+    <string name="awaiting_approval">بانتظار الموافقة</string>
+    <string name="something_went_wrong">هناك خطأ ما. حاول مرة اخرى!</string>
+    <string name="how_to_use_pay_later">كيفية استخدام خاصية الدفع لاحقا؟</string>
+    <string name="payments">المدفوعات</string>
+    <string name="pay_using_your_approved_limit">ادفع باستخدام الحد الموافق عليه</string>
+
+    <string name="status">الحالة</string>
+    <string name="completed">مكتملة</string>
+    <string name="entry_shouldbe_at_least">طول المدخل يجب ان يكون على الأقل </string>
+    <string name="enter">ادخل</string>
+    <string name="in_length"> احرف / ارقام</string>
+    <string name="check_internet_connection">لا يوجد إتصال بالإنترنت، حاول مرة أخرى</string>
+
+    <string name="suppliers_view_more">اظهر المزيد</string>
+    <string name="suppliers_title">الموردين</string>
+    <string name="suppliers_orders_title">الطلبات</string>
+    <string name="suppliers_pay_later_orders_title">طلبات الدفع اللاحق</string>
+    <string name="suppliers_order_paid_on">دفعت في</string>
+    <string name="suppliers_order_created_on">انشأ في</string>
+    <string name="suppliers_tab_paid">دفعت</string>
+    <string name="suppliers_tab_pending">غير مكتملة</string>
+    <string name="congratulations">تهانينا!</string>
+    <string name="pay_later">ادفع لاحقا</string>
+    <string name="payment_successful">تم الدفع بنجاح!</string>
+    <string name="pending_requests">الطلبات المعلقة</string>
+    <string name="available_pay_later_balance">الرصيد المتاح للدفع لاحقًا</string>
+    <string name="add_invoice_optional">إضافة فاتورة (اختياري)</string>
+    <string name="notes_optional">ملاحظات (اختياري)</string>
+    <string name="enter_your_notes">أدخل ملاحظاتك</string>
+    <string name="please_enter_valid_amount">الرجاء إدخال مبلغ صالح</string>
+    <string name="please_fill_all_mandatory_fields">الرجاء ملء جميع الحقول الإلزامية.</string>
+    <string name="continuee">يكمل</string>
+    <string name="what_is_pay_later">ما هي خاصية الدفع لاحقا؟</string>
+    <string name="pay_later_allows">تتيح لك خدمة الدفع لاحقًا تقسيم فاتورتك إلى أقساط بدون فوائد. أنت تدفع فقط وفقًا للجدول الزمني والراحة.</string>
+    <string name="no_hidden_fee">لا توجد رسوم خفية</string>
+    <string name="shariah_compliant">متوافقة مع أحكام الشريعة الإسلامية</string>
+    <string name="easy_installments">أقساط سهلة</string>
+    <string name="your_application">طلبك للحصول على خدمة هلا للدفع لاحقًا قيد المراجعة حاليًا من قبل مديرك. يرجى الاتصال بهم للتحقق عن حالة الطلب.</string>
+    <string name="request_under_review">الطلب قيد المراجعة</string>
+    <string name="we_have_sent_a_reminder">لقد أرسلنا تذكيرًا إلى المدير %1$s. يرجى التواصل للحصول على الموافقة</string>
+    <string name="upcoming_payments">المدفوعات القادمة</string>
+    <string name="paid_payments">المدفوعات المدفوعة</string>
+    <string name="date">تاريخ</string>
+    <string name="you_still_have">ما زال لديك…</string>
+    <string name="supplier_available_balance">الرصيد المتوفر: </string>
+    <string name="utilized_amount">المبلغ المستعمل</string>
+    <string name="pay_in_easy_installments">ادفع %1$s على أقساط سهلة</string>
+    <string name="supplier_apply_now">سجل الآن</string>
+    <string name="pay_later_comma">\"ادفع لاحقا\".</string>
+    <string name="when_paying_supplier_select">"عند الدفع للمورد، اختر "</string>
+    <string name="then_we_ll_deduct_automatic_re_payments_from_your">بعد ذلك، سنقوم بخصم دفعات إعادة الدفع التلقائية من حسابك</string>
+    <string name="wallet_as_per_the_schedule">" المحفظة حسب الجدول الزمني"</string>
+    <string name="total_payable_amount">المبلغ الإجمالي المستحق</string>
+    <string name="payment_date">تاريخ الدفع:</string>
+    <string name="no_data_found">لا توجد بيانات</string>
+    <string name="upcoming">القادمة</string>
+    <string name="paid">مدفوعة</string>
+    <string name="installment">الدفعة %1$s</string>
+    <string name="remaining_amount">المبلغ المتبقي</string>
+    <string name="settled_amount">المبلغ المسوَّى</string>
+    <string name="payment_schedule">جدول الدفع %1$s/%2$s</string>
+    <string name="_1st_payment">الدفعة الأولى</string>
+    <string name="last_payment">آخر دفعة</string>
+    <string name="installments">الأقساط</string>
+    <string name="due_on">مستحقة في</string>
+    <string name="no_orders_found">لم يتم العثور على طلبات</string>
+    <string name="order_details">تفاصيل الطلب</string>
+    <string name="transfer_now_to_your_supplier">انتقل الآن إلى المورد الخاص بك</string>
+
+    <!-- Form Screen -->
+
+    <string name="payment_details">تفاصيل الدفع</string>
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="total_amount">المبلغ الإجمالي</string>
+    <string name="numbers_of_installment">عدد الأقساط</string>
+    <string name="loan_start_date">تاريخ بدء القرض</string>
+    <string name="loan_end_date">تاريخ انتهاء القرض</string>
+    <string name="attachment">المرفقات</string>
+    <string name="notes">ملاحظات</string>
+    <string name="supplier_name">اسم المورد</string>
+    <string name="agent_phone">هاتف الوكيل</string>
+    <string name="supplier_details">تفاصيل المورد</string>
+    <string name="amount_should_be_less_than">يجب أن يكون المبلغ أقل من الرصيد المتوفر %1$s ريال سعودي</string>
+    <string name="no_interest_no_fee">لا فائدة، لا رسوم</string>
+    <string name="reminder_sent">تم إرسال التذكير!</string>
+
+
+    <!-- Cancel Auto Recharge -->
+    <string name="cancel_sheet_title">هل أنت متأكد أنك تريد إلغاء الشحن التلقائي؟</string>
+    <string name="cancel_error">لا يوجد شحن تلقائي ليتم إلغاؤه.</string>
+    <string name="cancel_success">تم إلغاء الشحن التلقائي بنجاح.</string>
+    <string name="no">لا</string>
+
+    <!-- Suspended View-->
+    <string name="your_pay_later_has_been_suspended">تم تعليق خدمة الدفع لاحقًا الخاصة بك.</string>
+    <string name="to_know_more_please_contact_us">للمزيد من المعلومات، يرجى التواصل معنا.</string>
+
+    <!-- BNPL Banner-->
+    <string name="with_your_10_000_sar">مع الحد الائتماني xxxx SAR الخاص بك، لا داعي للقلق بشأن الدفع للموردين عند التسليم. نحن نعتني بها.</string>
+    <string name="sell_first_pay_later">البيع أولا، والدفع لاحقا!</string>
+    <string name="with_your">مع الخاص بك </string>
+    <string name="approval_you_don_t_have_to_worry_about_payment_on_delivery_we_take_care_of_it">"الموافقة، لا داعي للقلق بشأن الدفع عند التسليم. نحن نعتني بها."</string>
+    <string name="pay_later_activated"> تم تفعيل خاصية الدفع لاحقًا!</string>
+    <string name="congratulations_you_can_now">تهانينا، يمكنك الآن استخدام \"الدفع لاحقًا\"</string>
+    <string name="apply_now_bnpl"> قدم الآن.</string>
+    <string name="you_are_approved_for">تمت الموافقة عليك بمبلغ 1,000 ريال سعودي</string>
+
+    <!-- Payment description-->
+    <string name="overdue_payments_text">*المدفوعات المتأخرة هي الأقساط غير المدفوعة من الأيام السابقة</string>
+    <string name="partially_paid_text">*المدفوعات المدفوعة جزئيًا هي الأقساط غير الكاملة من الأيام السابقة</string>
+    <string name="partially_paid">مدفوع جزئياً</string>
+    <string name="overdue">متأخر عن السداد</string>
+    <string name="please_enter_a_valid_amount">الرجاء إدخال مبلغ صالح.</string>
+    <string name="success">نجاح!</string>
+    <string name="you_have_been_approved_for_pay_later">لقد تمت الموافقة على الدفع لاحقًا</string>
+    <string name="amount_should_be_more_than">يجب أن يكون المبلغ أكبر من 0 ريال سعودي وأقل من الرصيد المتاح %1$s ريال سعودي</string>
+
+    <string name="choose_a_file_option">إختر ملف</string>
+    <string name="upload_a_photo_option">تحميل من الصور</string>
+    <string name="take_a_photo_option">إلتقط صورة</string>
+
+    <string name="amount_field_enter_amount">أدخل المبلغ</string>
+
+    <string name="currency">ر.س.</string>
+    <string name="mobile_number_prefix">+966</string>
+    <string name="mobile_number_placeholder">500000000</string>
+
+    <string name="confirm">تأكيد</string>
+
+    <string name="authentication_otp_send_successfully">تم إسال الرمز بنجاح</string>
+    <string name="content_description_back_button">زر العودة</string>
+
+    <string name="authentication_resend_the_code">اعادة الإرسال</string>
+
+    <string name="authentication_code_will_be_sent_at">سيتم إرسال الرمز خلال </string>
+
+    <string name="authentication_change_it">Change it</string>
+
+    <string name="authentication_one_time_password">كلمة مرور مرة واحدة</string>
+
+    <string name="authentication_otp_description">ادخل الرمز المكون من 4 أرقام الذي أرسلناه إلى هاتفك </string>
+
+    <string name="error">خطأ</string>
+
+</resources>

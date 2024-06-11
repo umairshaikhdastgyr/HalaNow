@@ -153,4 +153,20 @@
 
     <string name="confirm">Confirm</string>
 
+    <string name="content_description_back_button">Back button</string>
+
+    <string name="authentication_otp_send_successfully">OTP has been sent successfully</string>
+
+    <string name="authentication_resend_the_code">Resend the code</string>
+
+    <string name="authentication_code_will_be_sent_at">Code will be sent at </string>
+
+    <string name="authentication_change_it">Change it</string>
+
+    <string name="authentication_one_time_password">One-Time Password</string>
+
+    <string name="authentication_otp_description">Enter the 4-digit code that we sent to your phone </string>
+
+    <string name="error">Error</string>
+
 </resources>

@@ -78,8 +78,8 @@ class PayLaterActivity : ComponentActivity() {
             Intent(context, PayLaterActivity::class.java)
 
         @JvmStatic
-        fun start(context: Context) {
-            context.startActivity(getIntent(context))
+        fun start(context: Context, intent: Intent) {
+            context.startActivity(intent)
         }
     }
 }

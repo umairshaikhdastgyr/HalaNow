@@ -17,7 +17,7 @@ object UIUtil {
                 CookieBar.build(context)
                     .setMessage(message)
                     .setDuration(3000)
-                    .setBackgroundColor(R.color.error_50)
+                    .setBackgroundColor(R.color.error_100)
                     .show()
             }
         }
@@ -30,7 +30,7 @@ object UIUtil {
             CookieBar.build(it)
                 .setMessage(message)
                 .setDuration(3000)
-                .setBackgroundColor(R.color.error_50)
+                .setBackgroundColor(R.color.error_100)
                 .show()
         }
     }
@@ -43,7 +43,7 @@ object UIUtil {
                 CookieBar.build(context)
                     .setMessage(message)
                     .setDuration(3000)
-                    .setBackgroundColor(R.color.error_50)
+                    .setBackgroundColor(R.color.error_100)
                     .show()
             }
         }
@@ -57,7 +57,7 @@ object UIUtil {
                 CookieBar.build(context)
                     .setMessage(message)
                     .setDuration(3000)
-                    .setBackgroundColor(R.color.error_50)
+                    .setBackgroundColor(R.color.error_100)
                     .show()
             }
         }
