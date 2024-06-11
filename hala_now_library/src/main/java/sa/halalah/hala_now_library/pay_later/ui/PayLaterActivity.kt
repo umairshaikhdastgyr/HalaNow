@@ -8,21 +8,21 @@ import sa.halalah.hala_now_library.theme.HalaTheme
 
 import android.content.Context
 import android.content.Intent
+import androidx.activity.viewModels
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import dagger.hilt.android.AndroidEntryPoint
+import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 
-@AndroidEntryPoint
 class PayLaterActivity : ComponentActivity() {
 
     private var mainController: NavHostController? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             mainController = rememberNavController()
             HalaTheme {

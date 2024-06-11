@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
+        android:name=".HalaNowApplication"
         >
         <activity
             android:name=".pay_later.ui.PayLaterActivity"

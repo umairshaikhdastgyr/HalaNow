@@ -61,7 +61,7 @@ fun PaymentSummary(
 ) {
 
     val context = LocalContext.current
-    val activity = context as PaymentsFormActivity
+    val activity = context as PayLaterActivity
 //    val confirmPayLaterState by paymentSummaryViewModel.confirmPayLaterRes.collectAsState()
 
 

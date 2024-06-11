@@ -3,6 +3,7 @@ package sa.halalah.hala_now_library.pay_later.ui
 import Border
 import android.net.Uri
 import android.os.Build
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -41,10 +42,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.hala.module_core.compose.attachments.AddAttachments
-import com.hala.module_core.compose.attachments.MIMEType
 import sa.halalah.hala_now_library.core_widgets.inputfields.InputField
 import sa.halalah.hala_now_library.core_widgets.inputfields.MobileInputField
 import sa.halalah.hala_now_library.core_widgets.inputfields.SuffixTransformation
@@ -57,19 +55,19 @@ import sa.halalah.hala_now_library.pay_later.models.SupplierInputField
 import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
 import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.theme.MyTypography
-import sa.halalah.hala_now_library.utils.UIUtil
 import sa.halalah.hala_now_library.utils.amountToString
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 
 @Composable
 fun PaymentsForm(
     navController: NavHostController,
-//    paymentFormViewModel: PaymentFormViewModel = getViewModel()
+    viewModel: FormViewModel = viewModel()
 ) {
-    val categoryViewModel: FormViewModel = hiltViewModel()
+
     // Accessing the current context and activity
     val context = LocalContext.current
-    val activity = context as PaymentsFormActivity
+    val activity = context as PayLaterActivity
 
     // Regular expression for validating input
     val regex = "(\\d{0,6})|(\\d{0,6}\\.\\d{0,2})".toRegex()
