@@ -15,9 +15,8 @@ import sa.halalah.hala_now_library.authentication.view_models.IntentViewModel
 
 import sa.halalah.hala_now_library.core_widgets.HalaCircularProgressIndicator
 import sa.halalah.hala_now_library.theme.HalaTheme
-import sa.halalah.hala_now_library.utils.UIUtil
 
-class IntentActivity : ComponentActivity() {
+class AuthIntentActivity : ComponentActivity() {
 
     private val viewModel: IntentViewModel by viewModels()
 
@@ -30,7 +29,7 @@ class IntentActivity : ComponentActivity() {
         mobileNumber = intent.getStringExtra(MOBILE_NO).toString()
         requestID = intent.getStringExtra(REQUEST_ID).toString()
         isLogin = intent.getBooleanExtra(IS_LOGIN, false)
-        val aa = this as IntentActivity
+        val aa = this as AuthIntentActivity
         setContent {
             val uiState by viewModel.uiState.collectAsState()
             HalaTheme {
@@ -84,7 +83,7 @@ class IntentActivity : ComponentActivity() {
                 isLogin: Boolean = false,
                 isReset: Boolean = false
         ): Intent {
-            return Intent(context, IntentActivity::class.java).apply {
+            return Intent(context, AuthIntentActivity::class.java).apply {
                 putExtra(MOBILE_NO, mobile)
                 putExtra(REQUEST_ID, reqId)
                 putExtra(IS_LOGIN, isLogin)

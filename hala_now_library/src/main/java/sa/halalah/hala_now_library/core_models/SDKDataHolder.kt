@@ -1,18 +1,18 @@
 package sa.halalah.hala_now_library.core_models
 
-object UserDataHolder {
-    private var userData: UserData = UserData()
+object SDKDataHolder {
+    private var userData: UserInfo = UserInfo()
 
     @JvmStatic
     fun getUserData() = userData
 
     @JvmStatic
-    fun setUserData(userData: UserData) {
+    fun setUserData(userData: UserInfo) {
         this.userData = userData
     }
 }
 
-data class UserData(
+data class UserInfo(
     val name: String = "",
     val entityId: Int = 0,
     val entityTypeId: String = "",

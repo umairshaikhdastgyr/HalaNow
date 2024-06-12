@@ -43,7 +43,7 @@ import sa.halalah.hala_now_library.core_widgets.inputfields.KeyValueText
 import kotlinx.serialization.cbor.Cbor
 import kotlinx.serialization.decodeFromHexString
 import sa.halalah.hala_now_library.R
-import sa.halalah.hala_now_library.authentication.ui.IntentActivity
+import sa.halalah.hala_now_library.authentication.ui.AuthIntentActivity
 import sa.halalah.hala_now_library.core_models.UserDataHolder
 import sa.halalah.hala_now_library.core_widgets.HalaButton
 import sa.halalah.hala_now_library.core_widgets.InformationModal
@@ -56,7 +56,6 @@ import sa.halalah.hala_now_library.pay_later.models.ImageAndNotes
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderDetails
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderInstallment
 import sa.halalah.hala_now_library.pay_later.models.Supplier
-import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.pay_later.view_models.PaymentSummaryViewModel
 import sa.halalah.hala_now_library.pay_later.widgets.PaymentsCoinsView
 import sa.halalah.hala_now_library.theme.MyTypography
@@ -180,7 +179,7 @@ fun PaymentSummary(
             is ConfirmationPayLaterViewState.IntentAuthRequired -> {
                 val errorData = (confirmPayLaterState as ConfirmationPayLaterViewState.IntentAuthRequired).response
                 intentAuthLauncher.launch(
-                    IntentActivity.getIntent(context = activity, mobile = UserDataHolder.getUserData().mobileNumber, reqId = errorData.reqId)
+                    AuthIntentActivity.getIntent(context = activity, mobile = UserDataHolder.getUserData().mobileNumber, reqId = errorData.reqId)
                 )
             }
 
