@@ -15,7 +15,13 @@ object UtilCommon {
         errorBody?.let {
             try {
                 val jObjError = JSONObject(it.string())
-               return jObjError.getString("message") ?: jObjError.getString("title") ?: "Something went wrong. Please try again!"
+                if(jObjError.has("message")){
+                    return jObjError.getString("message")
+                }else if(jObjError.has("title")){
+                    return jObjError.getString("title")
+                }else{
+                    return "Something went wrong. Please try again!"
+                }
             } catch (e: Exception) {
                 return "Something went wrong. Please try again!"
             }
