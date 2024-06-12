@@ -11,6 +11,7 @@ import sa.halalah.hala_now_library.authentication.models.IntentAuthenticationRes
 import sa.halalah.hala_now_library.pay_later.models.ConfirmPaylaterRequest
 import sa.halalah.hala_now_library.pay_later.models.ConfirmationPayLaterViewState
 import sa.halalah.hala_now_library.pay_later.repository.PayLaterRepository
+import sa.halalah.hala_now_library.utils.UtilCommon
 
 class PaymentSummaryViewModel() : ViewModel() {
 
@@ -36,7 +37,7 @@ class PaymentSummaryViewModel() : ViewModel() {
                 }
             } else {
                 _confirmPayLaterRes.value =
-                    ConfirmationPayLaterViewState.Error(result.message() ?: "")
+                    ConfirmationPayLaterViewState.Error(UtilCommon.parseErrorMessage(result.errorBody()))
             }
         }
     }
