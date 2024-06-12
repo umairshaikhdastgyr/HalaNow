@@ -7,8 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import sa.halalah.hala_now_library.R
-import sa.halalah.hala_now_library.core_models.UserDataHolder
-import sa.halalah.hala_now_library.network_module.NetworkModule
+import sa.halalah.hala_now_library.core_models.SDKDataHolder
 import sa.halalah.hala_now_library.pay_later.models.CreatePaylaterOrderResponse
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderRequest
 import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
@@ -29,7 +28,7 @@ class FormViewModel : ViewModel() {
         callback: (response: CreatePaylaterOrderResponse?) -> Unit
     ) {
         viewModelScope.launch {
-            val result =  payLaterAPIs.submitPayLaterOrder(payLaterOrderRequest, entityId=UserDataHolder.getUserData().entityId.toString())
+            val result =  payLaterAPIs.submitPayLaterOrder(payLaterOrderRequest, entityId=SDKDataHolder.getUserData().entityId.toString())
 
             if(result.isSuccessful){
                 callback(result.body())

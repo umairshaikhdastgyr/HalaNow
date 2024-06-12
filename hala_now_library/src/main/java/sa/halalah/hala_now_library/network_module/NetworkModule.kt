@@ -6,9 +6,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import sa.halalah.hala_now_library.HalaNowApplication
-import sa.halalah.hala_now_library.core_models.UserDataHolder
-import sa.halalah.hala_now_library.authentication.repository.AuthAPIs
+import sa.halalah.hala_now_library.core_models.SDKDataHolder
 
 
 object NetworkModule {
@@ -21,7 +19,7 @@ object NetworkModule {
                 addInterceptor(
                     Interceptor { chain ->
                         val builder = chain.request().newBuilder()
-                        builder.header("Authorization", UserDataHolder.getUserData().token)
+                        builder.header("Authorization", SDKDataHolder.getUserData().token)
                         builder.header("Content-Type", "application/json")
                         builder.header("package", "sa.halalah.business")
                         builder.header("Ip-Address", "103.86.53.11")
