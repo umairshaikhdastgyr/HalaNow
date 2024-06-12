@@ -16,7 +16,7 @@ interface AuthAPIs {
         path = "https://api-stg.hala.com/user/intents/verify-otp",
         hasBody = true,
     )
-    fun verifyOTP(@Body verifyOTPRequest: VerifyOTPRequestRemote): Response<Unit>
+    suspend fun verifyOTP(@Body verifyOTPRequest: VerifyOTPRequestRemote): Response<Unit>
 
 
     @HTTP(
@@ -24,7 +24,7 @@ interface AuthAPIs {
         path = "https://api-stg.hala.com/user/intents/retry-otp",
         hasBody = true,
     )
-    fun retryOTP(@Body retryOTPRequest: RetryOTPRequestRemote): Response<Unit>
+    suspend fun retryOTP(@Body retryOTPRequest: RetryOTPRequestRemote): Response<Unit>
 
 
     @HTTP(
@@ -32,5 +32,5 @@ interface AuthAPIs {
         method = "GET",
         hasBody = false
     )
-    fun checkRequestID(@Path("reqID") req: String): Flow<IntentAuthenticationResponseRemote>
+    suspend fun checkRequestID(@Path("reqID") req: String): Response<IntentAuthenticationResponseRemote>
 }

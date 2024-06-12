@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import sa.halalah.hala_now_library.authentication.models.IntentAuthenticationResponseRemote
 import sa.halalah.hala_now_library.authentication.repository.AuthRepo
+import sa.halalah.hala_now_library.utils.UtilCommon
 
 class IntentViewModel(
 
@@ -26,17 +27,16 @@ class IntentViewModel(
         }
 
         viewModelScope.launch {
-           authApiService.checkRequestID(reqId).catch {
-               uiState.value = IntentViewState.Error(it.message.toString())
-           }
-               .collect { intentAuth ->
-                   if (!isIntentDone(intentAuth)) {
-                       uiState.value = null
-                   } else {
-                       uiState.value = IntentViewState.Done
-                   }
-               }
-
+           val result = authApiService.checkRequestID(reqId)
+            if(result.isSuccessful){
+                if (!isIntentDone(result.body()!!)) {
+                    uiState.value = null
+                } else {
+                    uiState.value = IntentViewState.Done
+                }
+            }else{
+                uiState.value = IntentViewState.Error(UtilCommon.parseErrorMessage(result.errorBody()))
+            }
         }
     }
 

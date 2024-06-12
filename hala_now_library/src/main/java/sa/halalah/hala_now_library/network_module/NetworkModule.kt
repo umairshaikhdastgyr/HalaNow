@@ -1,6 +1,6 @@
 package sa.halalah.hala_now_library.network_module
 
-import com.chuckerteam.chucker.api.ChuckerInterceptor
+//import com.chuckerteam.chucker.api.ChuckerInterceptor
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -35,12 +35,12 @@ object NetworkModule {
                         return@Interceptor chain.proceed(builder.build())
                     }
                 )
-                addInterceptor(
-                    Interceptor { chain ->
-                        return@Interceptor  ChuckerInterceptor(HalaNowApplication.Companion.applicationContext())
-                            .intercept(chain)
-                    }
-                )
+//                addInterceptor(
+//                    Interceptor { chain ->
+//                        return@Interceptor  ChuckerInterceptor(HalaNowApplication.Companion.applicationContext())
+//                            .intercept(chain)
+//                    }
+//                )
             }.build()
     }
 

@@ -29,5 +29,5 @@ interface PayLaterAPIs {
         path = "https://api-stg.hala.com/pay-later-orders/api/v1/PayLaterOrder/ConfirmPayLaterOrderWithIntent",
         hasBody = true,
     )
-    fun confirmPayLaterOrder(@Body request: ConfirmPaylaterRequest): Response<ConfirmPayLaterOrderResponse>
+    suspend fun confirmPayLaterOrder(@Body request: ConfirmPaylaterRequest): Response<ConfirmPayLaterOrderResponse>
 }

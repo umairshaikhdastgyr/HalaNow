@@ -24,6 +24,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -202,7 +203,7 @@ fun PaymentSummary(
             onClick = {
                 val payload =
                     ConfirmPaylaterRequest(payLaterOrdersResponse?.orderId ?: "")
-//                paymentSummaryViewModel.confirmPayLater(payload)
+                paymentSummaryViewModel.confirmPayLater(payload)
             },
         )
 

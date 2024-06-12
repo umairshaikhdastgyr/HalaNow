@@ -3,10 +3,17 @@ package sa.halalah.hala_now_library.authentication.view_models
 import android.os.CountDownTimer
 import android.text.format.DateUtils
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import sa.halalah.hala_now_library.authentication.models.states.OTPUiState
 import sa.halalah.hala_now_library.authentication.models.states.OTPViewState
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
+import sa.halalah.business.ivr.data.models.request.RetryOTPRequestRemote
+import sa.halalah.business.ivr.data.models.request.VerifyOTPRequestRemote
 import sa.halalah.hala_now_library.authentication.models.TimerValues
+import sa.halalah.hala_now_library.authentication.repository.AuthRepo
+import sa.halalah.hala_now_library.utils.UIUtil
+import sa.halalah.hala_now_library.utils.UtilCommon
 
 open class BaseOTPCodeViewModel : ViewModel() {
 
@@ -17,6 +24,7 @@ open class BaseOTPCodeViewModel : ViewModel() {
     )
     private var timer: CountDownTimer? = null
 
+    private val authApiService = AuthRepo.authApiService
 
     var uiState = MutableStateFlow<OTPViewState?>(null)
         private set
@@ -29,7 +37,7 @@ open class BaseOTPCodeViewModel : ViewModel() {
         data.value = data.value.copy(codeValue = newCode)
     }
 
-    fun startCounter() {
+    private fun startCounter() {
         data.value = data.value.copy(isTimeRunning = true)
         timer = object : CountDownTimer(TimerValues.COUNTDOWN_TIME, TimerValues.ONE_SECOND) {
 
@@ -55,12 +63,37 @@ open class BaseOTPCodeViewModel : ViewModel() {
         data.value = data.value.copy(codeValue = "")
     }
 
-    open fun onSubmitOtp(request: Any?) {
+     fun onSubmitOtp(request: Any?) {
+        uiState.value = OTPViewState.Loading
+        val map = request as HashMap<*, *>
+
+        val requestPayload = VerifyOTPRequestRemote(map["reqId"].toString(), data.value.codeValue)
+
+        viewModelScope.launch {
+            val result =  authApiService.verifyOTP(requestPayload)
+            if(result.isSuccessful){
+                uiState.value = OTPViewState.Data(result.body())
+            }else{
+                uiState.value = OTPViewState.Error(UtilCommon.parseErrorMessage(result.errorBody()))
+            }
+        }
     }
 
 
-    open fun resendCode(request: Any?) {
-        startCounter()
+      fun resendCode(request: Any?) {
+        val map = request as HashMap<*, *>
+        uiState.value = OTPViewState.Loading
+        viewModelScope.launch {
+            val retryOTPRequestRemote = RetryOTPRequestRemote(map["reqId"].toString())
+            val result =  authApiService.retryOTP(retryOTPRequestRemote)
+
+            if(result.isSuccessful){
+                uiState.value = OTPViewState.SuccessMessage
+                startCounter()
+            }else{
+                uiState.value = OTPViewState.Error(UtilCommon.parseErrorMessage(result.errorBody()))
+            }
+        }
     }
 
 }

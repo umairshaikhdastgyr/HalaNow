@@ -57,9 +57,21 @@ object UIUtil {
                 CookieBar.build(context)
                     .setMessage(message)
                     .setDuration(3000)
-                    .setBackgroundColor(R.color.error_100)
+                    .setBackgroundColor(R.color.primary_100)
                     .show()
             }
+        }
+    }
+
+    @JvmStatic
+    fun showSuccess(activity: Activity?, message: String) {
+        activity?.let { context ->
+                CookieBar.dismiss(context)
+                CookieBar.build(context)
+                    .setMessage(message)
+                    .setDuration(3000)
+                    .setBackgroundColor(R.color.primary_100)
+                    .show()
         }
     }
 }

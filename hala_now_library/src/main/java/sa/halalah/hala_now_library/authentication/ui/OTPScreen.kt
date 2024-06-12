@@ -86,23 +86,26 @@ fun OTPScreen(
         )
     }
 
-    when (val state = uiState) {
-        is OTPViewState.Error -> {
+    LaunchedEffect(key1 = uiState) {
+        when (val state = uiState) {
+            is OTPViewState.Error -> {
 
-            UIUtil.showError(activity, state.error)
-        }
+                UIUtil.showError(activity, state.error)
+            }
 
-        is OTPViewState.SuccessMessage -> {
-            UIUtil.showError(activity, stringResource(id = R.string.authentication_otp_send_successfully))
-        }
+            is OTPViewState.SuccessMessage -> {
+                UIUtil.showSuccess(
+                    activity,
+                    activity.resources.getString(R.string.authentication_otp_send_successfully)
+                )
+            }
+            is OTPViewState.Data -> {
 
-        is OTPViewState.Data -> {
-            LaunchedEffect(key1 = state.data) {
                 onDoneVerification(state.data)
             }
-        }
 
-        else -> {}
+            else -> {}
+        }
     }
 }
 
@@ -165,17 +168,6 @@ private fun OTPContent(
                 fontWeight = FontWeight.Medium,
             )
         }
-
-        Text(
-            text = "Next",
-            modifier = Modifier.clickable(onClick = {
-                onCodeFilled()
-            }).padding(top = 30.dp),
-            style = MaterialTheme.typography.h4,
-            color = colorResource(id = R.color.primary_100),
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Medium,
-        )
     }
 }
 
@@ -190,7 +182,7 @@ private fun DescriptionCodeScreen(
     val context = LocalContext.current
     val changeItStr = stringResource(id = R.string.authentication_change_it)
     //TODO If you have better solution please fix it 😭
-    val mobileNo =  "+966${mobileNumber}"
+    val mobileNo = "+966${mobileNumber}"
 
     val annotatedString = buildAnnotatedString {
         append("$body $mobileNo")
