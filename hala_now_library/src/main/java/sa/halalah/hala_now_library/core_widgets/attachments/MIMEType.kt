@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.attachments
+package sa.halalah.hala_now_library.core_widgets.attachments
 
 enum class MIMEType(val type: String) {
     IMAGE("image/*"),

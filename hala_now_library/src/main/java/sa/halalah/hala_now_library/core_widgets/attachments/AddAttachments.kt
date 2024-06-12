@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.attachments
+package sa.halalah.hala_now_library.core_widgets.attachments
 
 import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
@@ -24,13 +24,13 @@ import sa.halalah.hala_now_library.theme.MyTypography
 
 @Composable
 fun AddAttachments(
-        label: String,
-        isMultipleDocuments: Boolean = true,
-        disablePickerButton: MutableState<Boolean> = mutableStateOf(false),
-        attachments: List<Uri>,
-        mimeTypes: List<MIMEType>,
-        onAttachmentsAdded: (List<Uri>, Boolean) -> Unit,
-        onAttachmentRemoved: (Uri) -> Unit
+    label: String,
+    isMultipleDocuments: Boolean = true,
+    disablePickerButton: MutableState<Boolean> = mutableStateOf(false),
+    attachments: List<Uri>,
+    mimeTypes: List<MIMEType>,
+    onAttachmentsAdded: (List<Uri>, Boolean) -> Unit,
+    onAttachmentRemoved: (Uri) -> Unit
 ) {
     Column {
         Text(

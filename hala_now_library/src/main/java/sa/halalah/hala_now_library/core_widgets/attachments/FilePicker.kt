@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.attachments
+package sa.halalah.hala_now_library.core_widgets.attachments
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -10,10 +10,10 @@ import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun FilePicker(
-        mimeTypes: List<MIMEType>,
-        isMultipleDocuments: Boolean,
-        onFilesSelected: (List<Uri>) -> Unit,
-        onDismiss: () -> Unit
+    mimeTypes: List<MIMEType>,
+    isMultipleDocuments: Boolean,
+    onFilesSelected: (List<Uri>) -> Unit,
+    onDismiss: () -> Unit
 ) {
     val pickFileLauncher =
             if (isMultipleDocuments)

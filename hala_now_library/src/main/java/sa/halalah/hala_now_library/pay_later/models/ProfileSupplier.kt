@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-data class SupplierProfile(
+data class ProfileSupplier(
         val id: String = "",
         val isVisible: Boolean = false,
         val salesmanEntityId: String = "",

@@ -1,4 +1,4 @@
-package com.hala.module_core.compose.attachments
+package sa.halalah.hala_now_library.core_widgets.attachments
 
 import android.net.Uri
 import androidx.compose.foundation.Image
@@ -26,11 +26,11 @@ import sa.halalah.hala_now_library.R
 
 @Composable
 fun AddAttachmentsButton(
-        mimeTypes: List<MIMEType>,
-        isMultipleDocuments: Boolean,
-        onAttachmentsAdded: (List<Uri>, Boolean) -> Unit,
-        disablePickerButton: MutableState<Boolean>,
-        label: String,
+    mimeTypes: List<MIMEType>,
+    isMultipleDocuments: Boolean,
+    onAttachmentsAdded: (List<Uri>, Boolean) -> Unit,
+    disablePickerButton: MutableState<Boolean>,
+    label: String,
 ) {
     var isOptionsSheetShown by remember { mutableStateOf(false) }
     var isTakeAPhotoShown by remember { mutableStateOf(false) }

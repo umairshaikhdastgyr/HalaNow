@@ -3,7 +3,6 @@ package sa.halalah.hala_now_library.pay_later.ui
 import Border
 import android.net.Uri
 import android.os.Build
-import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -52,13 +51,13 @@ import sa.halalah.hala_now_library.core_widgets.inputfields.NoBackgroundTextFiel
 import sa.halalah.hala_now_library.core_widgets.loadingModal
 import sa.halalah.hala_now_library.pay_later.models.DynamicInputFieldInputType
 import sa.halalah.hala_now_library.pay_later.models.SupplierInputField
-import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
+import sa.halalah.hala_now_library.pay_later.models.ProfileSupplier
 import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
 import sa.halalah.hala_now_library.theme.MyTypography
 import sa.halalah.hala_now_library.utils.amountToString
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.hala.module_core.compose.attachments.AddAttachments
-import com.hala.module_core.compose.attachments.MIMEType
+import sa.halalah.hala_now_library.core_widgets.attachments.AddAttachments
+import sa.halalah.hala_now_library.core_widgets.attachments.MIMEType
 import kotlinx.serialization.cbor.Cbor
 import kotlinx.serialization.encodeToHexString
 import sa.halalah.hala_now_library.pay_later.models.ImageAndNotes
@@ -80,12 +79,12 @@ fun PaymentsForm(
     val regex = "(\\d{0,6})|(\\d{0,6}\\.\\d{0,2})".toRegex()
 
     // Retrieving supplier profile from intent
-    val supplierProfile: SupplierProfile =
+    val profileSupplier: ProfileSupplier =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            activity.intent.getParcelableExtra("supplierProfile", SupplierProfile::class.java)
-                ?: SupplierProfile()
+            activity.intent.getParcelableExtra("supplierProfile", ProfileSupplier::class.java)
+                ?: ProfileSupplier()
         } else {
-            activity.intent.getParcelableExtra("supplierProfile") ?: SupplierProfile()
+            activity.intent.getParcelableExtra("supplierProfile") ?: ProfileSupplier()
         }
 
     // Mutable state for amount and notes
@@ -202,7 +201,7 @@ fun PaymentsForm(
                     // Display remaining balance
                     val text = buildAnnotatedString {
                         pushStyle(SpanStyle(fontWeight = FontWeight.Medium, fontSize = 18.sp))
-                        append(supplierProfile.payLaterRemainingAmount.amountToString())
+                        append(profileSupplier.payLaterRemainingAmount.amountToString())
                         pushStyle(SpanStyle(fontWeight = FontWeight.Medium, fontSize = 13.sp))
                         append(" " + stringResource(id = R.string.currency))
                     }
@@ -233,7 +232,7 @@ fun PaymentsForm(
 
             // Additional input fields
             Column {
-                supplierProfile.inputFields.forEach { it ->
+                profileSupplier.inputFields.forEach { it ->
                     DynamicInputs(it) { value ->
                         additionalFields[it.label] = value
                     }
@@ -315,7 +314,7 @@ fun PaymentsForm(
 
                 val (isValid, id, arg) = paymentFormViewModel.validateInput(
                     amount,
-                    supplierProfile,
+                    profileSupplier,
                     additionalFields
                 )
 
@@ -330,8 +329,8 @@ fun PaymentsForm(
                         amount = amount.toDouble(),
                         attachment = (inVoiceImage ?: Uri.EMPTY).toString(),
                         notes = notes,
-                        salesmanEntityId = supplierProfile.salesmanEntityId,
-                        supplierId = supplierProfile.id
+                        salesmanEntityId = profileSupplier.salesmanEntityId,
+                        supplierId = profileSupplier.id
                     )
                     loading(true)
                     paymentFormViewModel.submitPayLater(payLaterOrderRequest) { response ->

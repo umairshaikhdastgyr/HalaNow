@@ -10,7 +10,7 @@ import sa.halalah.hala_now_library.R
 import sa.halalah.hala_now_library.core_models.SDKDataHolder
 import sa.halalah.hala_now_library.pay_later.models.CreatePaylaterOrderResponse
 import sa.halalah.hala_now_library.pay_later.models.PayLaterOrderRequest
-import sa.halalah.hala_now_library.pay_later.models.SupplierProfile
+import sa.halalah.hala_now_library.pay_later.models.ProfileSupplier
 import sa.halalah.hala_now_library.pay_later.repository.PayLaterRepository
 import sa.halalah.hala_now_library.utils.amountToString
 
@@ -64,11 +64,11 @@ class FormViewModel : ViewModel() {
 
     fun validateInput(
         amount: String,
-        supplierProfile: SupplierProfile,
+        profileSupplier: ProfileSupplier,
         additionalFields: HashMap<String, String>,
     ): Triple<Boolean, Int, String> {
 
-        val isError = supplierProfile.inputFields.any {
+        val isError = profileSupplier.inputFields.any {
             val text = additionalFields[it.label].orEmpty()
             (it.isOptional && text.length < it.minLength) || (!it.isOptional && text.length < it.minLength)
         }
@@ -77,10 +77,10 @@ class FormViewModel : ViewModel() {
             return Triple(false, R.string.please_enter_a_valid_amount, "")
         } else if (amount == "0") {
             return Triple(false,R.string.amount_should_be_more_than,
-                supplierProfile.payLaterRemainingAmount.amountToString())
-        } else if (amount.toDouble() > supplierProfile.payLaterRemainingAmount) {
+                profileSupplier.payLaterRemainingAmount.amountToString())
+        } else if (amount.toDouble() > profileSupplier.payLaterRemainingAmount) {
             return Triple(false,  R.string.amount_should_be_more_than,
-                supplierProfile.payLaterRemainingAmount.amountToString()
+                profileSupplier.payLaterRemainingAmount.amountToString()
             )
         } else if (isError) {
             return Triple(false, R.string.please_fill_all_mandatory_fields, "")

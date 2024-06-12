@@ -1,4 +1,4 @@
-package com.hala.module_authentication.intent.ui
+package sa.halalah.hala_now_library.authentication.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember

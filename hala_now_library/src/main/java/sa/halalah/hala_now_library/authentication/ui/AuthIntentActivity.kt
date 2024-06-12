@@ -9,7 +9,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.hala.module_authentication.intent.ui.IntentWidgetCoordinator
 import sa.halalah.hala_now_library.authentication.models.states.IntentViewState
 import sa.halalah.hala_now_library.authentication.view_models.IntentViewModel
 
