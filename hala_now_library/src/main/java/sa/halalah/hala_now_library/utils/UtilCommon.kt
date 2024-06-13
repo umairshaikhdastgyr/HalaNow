@@ -1,11 +1,14 @@
 package sa.halalah.hala_now_library.utils
 
+import android.content.Context
+import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.ui.res.stringResource
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import sa.halalah.hala_now_library.R
 import java.security.AccessController.getContext
+import java.util.Locale
 
 
 object UtilCommon {
@@ -27,5 +30,14 @@ object UtilCommon {
             }
         }
         return "Something went wrong. Please try again!"
+    }
+
+    @JvmStatic
+    fun changeLanguage(context: Context, language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
 }
