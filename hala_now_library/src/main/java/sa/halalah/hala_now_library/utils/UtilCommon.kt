@@ -37,7 +37,7 @@ object UtilCommon {
         val locale = Locale(language)
         Locale.setDefault(locale)
         val config = Configuration()
-        config.locale = locale
+        config.setLocale(locale)
         context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
 }

@@ -15,7 +15,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import sa.halalah.hala_now_library.core_models.SDKDataHolder
 import sa.halalah.hala_now_library.pay_later.view_models.FormViewModel
+import sa.halalah.hala_now_library.utils.UtilCommon
 
 class PayLaterActivity : ComponentActivity() {
 
@@ -23,6 +25,7 @@ class PayLaterActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        UtilCommon.changeLanguage(this, SDKDataHolder.getUserData().acceptLanguage)
         setContent {
             mainController = rememberNavController()
             HalaTheme {
